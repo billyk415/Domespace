@@ -1,0 +1,12 @@
+%br
+%br
+
+.appointment-form
+  %h1 Book a facility
+  = render 'form', appointment: @appointment
+  = link_to 'Back', appointments_path
+
+- form_for facilities_path, :method => 'get' do
+  %p
+    = text_field_tag :search, params[:search]
+    = submit_tag "Search", :name => nil
